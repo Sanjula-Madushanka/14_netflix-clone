@@ -1,7 +1,11 @@
-npm init -y
-npm install express jsonwebtoken mongoose cookie-parser dotenv axios bcryptjs
+
 
 backend:-
+
+ 01.
+ npm init -y
+npm install express jsonwebtoken mongoose cookie-parser dotenv axios bcryptjs
+ 
  server.js
      "type": "module",
       
@@ -13,7 +17,7 @@ backend:-
       
   
 npm install nodemon -D
-
+02.
 
 
 
