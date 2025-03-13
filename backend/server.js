@@ -1,22 +1,15 @@
 import express from 'express';
 import authRoutes from "./routes/auth.route.js";
+import { ENV_VARS } from './config/envVars.js';
 
 const app = express();
+const PORT = ENV_VARS.PORT;
 
-// Middleware
-app.use(express.json()); // Parse JSON bodies
+app.use(express.json()); 
 
-// Routes
+
 app.use("/api/v1/auth", authRoutes);
 
-// Error Handling Middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send("Something broke!");
-});
-
-// Start Server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server started at http://localhost:${PORT}`);
+app.listen( PORT,()=>{
+  console.log("Server is running at http://localhost:",+PORT);
 });
