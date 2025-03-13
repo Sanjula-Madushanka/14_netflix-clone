@@ -3,12 +3,20 @@ import authRoutes from "./routes/auth.route.js";
 
 const app = express();
 
-app.use("/api//v1/auth",authRoutes);
+// Middleware
+app.use(express.json()); // Parse JSON bodies
 
+// Routes
+app.use("/api/v1/auth", authRoutes);
 
+// Error Handling Middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send("Something broke!");
+});
 
-
-app.listen(5000,  () =>  {
-console.log("Server started at http://localhost:5000");
-
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server started at http://localhost:${PORT}`);
 });
