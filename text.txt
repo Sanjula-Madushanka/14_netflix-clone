@@ -4,8 +4,13 @@ npm install express jsonwebtoken mongoose cookie-parser dotenv axios bcryptjs
 backend:-
  server.js
      "type": "module",
-     
-
+      
+       "main": "backend/server.js",
+ 
+  "scripts": {
+    "dev":"node backend/server.js"
+  }
+      
 
 
 frontend:-
