@@ -10,7 +10,9 @@ backend:-
   "scripts": {
     "dev":"node backend/server.js"
   }
-      
+      npm install nodemon -D
+
+
 
 
 frontend:-
