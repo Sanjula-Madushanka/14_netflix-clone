@@ -1,0 +1,11 @@
+npm init -y
+npm install express jsonwebtoken mongoose cookie-parser dotenv axios bcryptjs
+
+backend:-
+ server.js
+     "type": "module",
+     
+
+
+
+frontend:-
