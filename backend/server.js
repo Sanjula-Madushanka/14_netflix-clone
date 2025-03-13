@@ -10,13 +10,12 @@ const PORT = ENV_VARS.PORT;
 app.use(express.json()); 
 
 
-app.use(express.json());
-
 
 app.use("/api/v1/auth", authRoutes);
 
 app.listen( PORT,()=>{
-  console.log("Server is running at http://localhost:",+PORT);
+ console.log(`Server is running at http://localhost:${PORT}`);
+
   connectDB();
 
 

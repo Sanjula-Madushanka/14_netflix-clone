@@ -29,3 +29,5 @@ searchHistory: {
 
 const User =mongoose.model("User", userSchema);
 //users
+
+export default User

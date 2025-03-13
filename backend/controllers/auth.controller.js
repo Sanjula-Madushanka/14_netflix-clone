@@ -1,3 +1,4 @@
+import User from "../models/user.model.js";
 export async function signup(req, res) {
 	try {
 		const { email, password, username } = req.body;
@@ -28,28 +29,33 @@ export async function signup(req, res) {
 			return res.status(400).json({ success: false, message: "Username already exists" });
 		}
 
-		const salt = await bcryptjs.genSalt(10);
-		const hashedPassword = await bcryptjs.hash(password, salt);
+
 
 		const PROFILE_PICS = ["/avatar1.png", "/avatar2.png", "/avatar3.png"];
 
 		const image = PROFILE_PICS[Math.floor(Math.random() * PROFILE_PICS.length)];
 
-        await newUser.save();
-
-        const newUser = new User({
+		const newUser = new User({
 			email,
-			password: hashedPassword,
+			password,
 			username,
 			image,
 		});
-//postman test
 
+	
+		await newUser.save();
+
+		res.status(201).json({
+			success: true,
+			user: {
+				...newUser._doc,
+				password: "",
+			},
+		});
 	} catch (error) {
-        console.log("Error in signup controller", error.message);
-        res.status(500).json({ success: false, message: "Internal server error" });
-
-    }
+		console.log("Error in signup controller", error.message);
+		res.status(500).json({ success: false, message: "Internal server error" });
+	}
 }
 
 export async function login(req, res) {
