@@ -22,3 +22,29 @@ npm install nodemon -D
 
 
 frontend:-
+
+
+npm create vite@latest .
+npm i
+===============
+react hot toast
+lucide react
+react player
+==============
+npm i axios lucide-react react-player react-hot-toast react-router-dom zustand
+
+====================
+npm run dev
+==================
+remove app.jsx  things
+delete app.css
+clear index.css
+delete assert
+
+===========initialaize tailwind css===
+
+npm install -D tailwindcss@3 postcss autoprefixer
+
+======tailwind config file
+
+
