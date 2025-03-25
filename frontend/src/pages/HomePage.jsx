@@ -2,9 +2,7 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <div>
-      
-    </div>
+   <div className='hero-bg h-screen'>Homepage</div>
   )
 }
 
