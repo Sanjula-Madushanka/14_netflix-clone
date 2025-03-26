@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuthStore } from './store/authUser';
 
 const SignUpPage = () => {
 	const {searchParams}=new URL (document.location)
@@ -10,12 +11,17 @@ const SignUpPage = () => {
   const [username, setUsername] = useState("");
  
 
-const handlesignUp =(e) =>{
+  const {signup}=useAuthStore();
+
+  const handlesignUp = async (e) => {
 	e.preventDefault();
-	console.log(email, username,password);
-}
-
-
+	try {
+	  await signup({ email, username, password }); // Call signup with the user data
+	} catch (error) {
+	  console.error("Signup error:", error);
+	}
+  };
+  
 
   return (
     <div className='h-screen w-full hero-bg'>
