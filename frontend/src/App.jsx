@@ -4,9 +4,10 @@ import LoginPage from "./pages/LoginPage.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
 import Footer from "./components/Footer.jsx";
 import { Toaster } from "react-hot-toast";
-import { useAuthStore } from "./pages/store/authUser";
+
 import { useEffect } from "react";
 import { Loader } from "lucide-react";
+import useAuthStore from "./pages/store/authUser.js";
 
 function App() {
   const { user, isCheckingAuth, authCheck } = useAuthStore();
