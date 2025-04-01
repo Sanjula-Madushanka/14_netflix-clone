@@ -2,10 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { LogOut, Menu, Search } from "lucide-react";
 import useAuthStore from "../pages/store/authUser";
-
-
-
-
+import { useContentStore } from "../pages/store/content";
 
 const Navbar = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,7 +10,7 @@ const Navbar = () => {
 
 	const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-
+	const { setContentType } = useContentStore();
 
 	return (
 		<header className='max-w-6xl mx-auto flex flex-wrap items-center justify-between p-4 h-20'>
