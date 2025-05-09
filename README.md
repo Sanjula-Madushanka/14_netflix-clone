@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="./assets/netflix-banner.png" alt="Netflix Clone Banner" width="800"/>
-</p>
+
 
 <h1 align="center">🎬 Netflix Clone</h1>
 
@@ -34,5 +32,6 @@
 
 ---
 
-## 📂 Folder Structure
+
+
 
